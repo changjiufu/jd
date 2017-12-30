@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.customer_box{
+	width: 75px;
+	height: 28px;
+	position: relative;
+	top: 1px;
+}
+.header_ul_right>li>.jt_down{
+	padding-right: 0;
+}
+.customer{
+	padding-left:5px;
+	width: 68px;
+	height: 28px;
+	border: 1px solid transparent;
+	position: relative;
+	bottom: 1px;
+	z-index: 2;
+}
+.customer1{
+	width: 155px;
+	position: absolute;
+	top: 30px;
+	right: -1px;
+	background-color: #fff;
+	border: 1px solid #cdcdcd;
+	display: none;
+	z-index: 1;
+}
+li.customer_box:hover .customer{
+	background-color: #fff;
+	border-color: #cdcdcd;
+	border-bottom-color:#fff ;
+}
+.customer_box:hover .customer1{
+	display: block;
+}
+.customer1 table{
+	padding: 10px 0 10px 15px;
+}
+.customer1 th{
+	color: #666;
+	line-height: 25px;
+}
+.customer1 td{
+	line-height: 25px;
+}
+.customer1 a{
+	color: #999;
+	font-size: 12px;
+	text-decoration: none;
+	padding-right:15px;
+}
+.customer1 a:hover{
+	color: #C81623;
+}
+	</style>
+</head>
+<body>
+	<ul class="header_ul_right">
+					<li><a href="" class="hello">您好，请登录</a></li>
+					<li>	<a href="" class="hello1">免费注册</a></li>
+					<li>|</li>
+					<li><a href="">我的订单</a></li>
+					<li>|</li>
+					<li><a href="" class="jt_down">我的京东<i></i></a></li>
+					<li>|</li>
+					<li><a href="">京东会员</a></li>
+					<li>|</li>
+					<li>	<a href="">企业采购</a></li>
+					<li>|</li>
+					<li class="customer_box">
+						<a href="" class="jt_down customer">客户服务<i></i></a>
+						<div class="customer1">
+							<table border="0px" cellspacing="0px" cellpadding="0px">
+								<tr>
+									<th>客户</th>
+									<th></th>
+								</tr>
+								<tr>
+									<td><a href="">帮助中心</a></td>
+									<td><a href="">售后服务</a></td>
+								</tr>
+								<tr>
+									<td><a href="">在线客服</a></td>
+									<td><a href="">意见建议</a></td>
+								</tr>
+								<tr>
+									<td><a href="">电话客服</a></td>
+									<td><a href="">客服邮箱</a></td>
+								</tr>
+								<tr>
+									<td><a href="">金融咨询</a></td>
+									<td><a href="">售全球客服</a></td>
+								</tr>
+								<tr>
+									<th>商户</th>
+									<th></th>
+								</tr>
+								<tr>
+									<td><a href="">合作招商</a></td>
+									<td><a href="">京东商学院</a></td>
+								</tr>
+								<tr>
+									<td><a href="">商家后台</a></td>
+									<td><a href="">京麦工作台</a></td>
+								</tr>
+								<tr>
+									<td><a href="">商家帮助</a></td>
+									<td><a href="">规则平台</a></td>
+								</tr>
+							</table>
+						</div>
+					</li>
+					<li>|</li>
+					<li><a href="" class="jt_down">网站导航<i></i></a></li>
+					<li>|</li>
+					<li>
+						<a href="" class="phone_jd">手机京东</a>
+						<div class="jd_erweima">
+							<img src="images/erweima.png"/>
+							<div class="jd_erweima_sj"></div>
+						</div>
+					</li>
+				</ul>
+</body>
+</html>

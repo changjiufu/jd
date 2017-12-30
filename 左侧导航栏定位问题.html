@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>导航栏定位问题</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#main{
+			width: 800px;
+			margin:0 auto;
+			height: 2000px;
+			background-color: green;
+		}
+		#menu{
+			position: fixed;
+			left:0;
+			top: 0;
+			width: 40px;
+			height: 300px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="main"></div>
+	<div id="menu"></div>
+	<script>
+	var menu=document.getElementById('menu');
+	var main=document.getElementById('main');
+	var x=main.offsetLeft;
+	window.onresize=function(){
+		// offsetLeft是距离页面左边的宽度
+		var x=main.offsetLeft;
+		console.log(x)
+		if(x>70){
+			//这个70是左边导航栏的宽度加上左边导航栏距右边居中部分的宽度
+			menu.style.left=(x-70)+'px';
+		}else{
+			menu.style.left=(x+15)+'px';
+		}
+		
+	}
+	</script>
+</body>
+</html>

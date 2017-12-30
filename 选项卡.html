@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<style>
+		*{
+			padding: 0;
+			margin:0;
+		}
+		.news{
+			width: 360px;
+			height: 230px;
+			margin:auto;
+			margin-top:10px;
+		}
+		ul{
+			list-style: none;
+			/*position: relative;*/
+		}
+		.news .news_header{
+			/*overflow: hidden;*/
+			background-color: #f7f7f7;
+			border:1px solid #dbdee1;
+			border-left: 1px solid #fff;
+			height: 35px;
+			/*line-height: 35px;*/
+		}
+		.news .news_header li{
+            float: left;
+            padding: 0 15px;
+            font-size: 16px;
+            border-top:3px solid transparent;
+            line-height: 32px;
+            border-bottom:1px solid transparent;
+		}
+		.news .news_header .active{
+			background-color: #fff;
+			border-left: 1px solid #fff;
+			border-right: 1px solid #dbdee1;
+			border-top:3px solid #ff8400;
+		}
+		div.news_list>div{
+            display: none;
+		}
+		div.news_list>div.show{
+			display: block;
+		}
+		div.news_list li{
+			line-height: 25px;
+		}
+		div.news_list li a{
+			color: #666;
+			text-decoration: none;
+		}
+		div.news_list li a:hover{
+			color: #ff8400;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<div class="news">
+		<div class="news_header">
+			<ul>
+				<li class="active">新闻</li>
+				<li>娱乐</li>
+				<li>游戏</li>
+			</ul>
+		</div>
+		<div class="news_list">
+			<div class="show ">
+				<ul class="myul">
+					
+				</ul>
+			</div>
+			<div>
+				<ul class="myul">
+					
+				</ul>
+			</div>
+			<div>
+				<ul class="myul">
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script>
+	    var myjs=[
+				[
+				{"content":"“战旗直播”涉黄被查办","url":"http://news.ifeng.com/a/20170718/51449441_0.shtml)"},
+				{"content":"惹怒粉丝惊动工商局","url":"http://ent.ifeng.com/a/20170719/42957062_0.shtml"},
+				{"content":"孙莉素颜过生日","url":"http://ent.ifeng.com/a/20170719/42957114_0.shtml"},
+				],
+				[
+				{"content":"“熊猫直播”涉黄被查办","url":"http://news.ifeng.com/a/20170718/51449441_0.shtml)"},
+				{"content":"惹怒面条惊动工商局","url":"http://ent.ifeng.com/a/20170719/42957062_0.shtml"},
+				{"content":"李刚素颜过生日","url":"http://ent.ifeng.com/a/20170719/42957114_0.shtml"},
+				],
+				[
+				{"content":"“斗鱼直播”涉黄被查办","url":"http://news.ifeng.com/a/20170718/51449441_0.shtml)"},
+				{"content":"惹怒米饭惊动工商局","url":"http://ent.ifeng.com/a/20170719/42957062_0.shtml"},
+				{"content":"赵四素颜过生日","url":"http://ent.ifeng.com/a/20170719/42957114_0.shtml"},
+				]
+				]
+		// json代码
+		var myul=document.getElementsByClassName('myul');
+		
+		var str='';
+		var str1='';
+		var str2='';
+		// console.log(myjs[0]);
+        for(var b=0;b<myjs[0].length;b++){
+              str+='<li><a href="'+myjs[0][b].url+'">'+myjs[0][b].content+'</a></li>';
+        }
+        for(var b=0;b<myjs[1].length;b++){
+              str1+='<li><a href="'+myjs[1][b].url+'">'+myjs[1][b].content+'</a></li>';
+        }
+        for(var b=0;b<myjs[2].length;b++){
+              str2+='<li><a href="'+myjs[2][b].url+'">'+myjs[2][b].content+'</a></li>';
+        }
+
+        myul[0].innerHTML=str;
+        myul[1].innerHTML=str1;
+        myul[2].innerHTML=str2;
+
+
+
+
+
+		var myli=document.getElementsByClassName('news_header')[0].children[0].children;
+		var mydiv=document.getElementsByClassName('news_list')[0].children;
+		var news_header=document.getElementsByClassName('news_header');
+		// console.log(myli);
+		// console.log(mydiv);
+		for(var i=0;i<myli.length;i++){
+			myli[i].n=i;
+			myli[i].onmouseover=function(){
+				for(var v=0;v<myli.length;v++){
+                    myli[v].className='';
+                    myli[v].style.borderLeft='1px solid transparent';
+                    
+				}
+				myli[this.n].className='active';
+				for(var s=0;s<mydiv.length;s++){
+					mydiv[s].className='';
+				}
+				mydiv[this.n].className='show';
+				// console.log(myli[v]);
+				if(this.n==0){
+					news_header[0].style.borderLeft="1px solid #fff";
+				}
+				else{
+					news_header[0].style.borderLeft='1px solid #dbdee1';
+					this.style.borderLeft='1px solid #dbdee1';
+				}
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
